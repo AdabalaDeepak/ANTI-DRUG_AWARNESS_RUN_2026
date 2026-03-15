@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ANTI DRUG AWARENESS RUN – Visakhapatnam</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --accent: #38ada9;
+            --bg: #f5f6fa;
+            --white: #fff;
+            --shadow: 0 4px 24px rgba(10,61,98,0.08);
+            --radius: 16px;
+            --transition: 0.3s cubic-bezier(.4,0,.2,1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            color: #222;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0;
+            box-shadow: var(--shadow);
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            background: linear-gradient(135deg, var(--primary) 60%, var(--accent) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-poster {
+            width: 340px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 32px;
+            animation: fadeIn 1s;
+        }
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-align: center;
+            animation: fadeInUp 1s;
+        }
+        .hero-location {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+            animation: fadeInUp 1.2s;
+        }
+        .hero-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            text-align: center;
+            animation: fadeInUp 1.3s;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            text-align: center;
+            max-width: 480px;
+            animation: fadeInUp 1.4s;
+        }
+        .hero-details {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            animation: fadeInUp 1.5s;
+        }
+        .register-btn {
+            background: var(--accent);
+            color: var(--white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius);
+            padding: 16px 40px;
+            margin-top: 16px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: background var(--transition);
+            animation: fadeInUp 1.6s;
+        }
+        .register-btn:hover {
+            background: #218c8d;
+        }
+        .countdown, .live-counter {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 8px 0;
+            animation: fadeInUp 1.7s;
+        }
+        section {
+            max-width: 900px;
+            margin: 48px auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            animation: fadeIn 1s;
+        }
+        section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        .event-details-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .event-details-list div {
+            flex: 1 1 180px;
+            background: var(--bg);
+            border-radius: var(--radius);
+            padding: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .form-section {
+            background: var(--bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+        input, select {
+            padding: 12px;
+            border-radius: var(--radius);
+            border: 1px solid #d1d8e0;
+            font-size: 1rem;
+            background: var(--white);
+            transition: border var(--transition);
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        input:focus, select:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+        .donation-options {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .donation-options input[type="radio"] {
+            accent-color: var(--accent);
+        }
+        .coupon-section {
+            margin-bottom: 16px;
+        }
+        .apply-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            padding: 8px 24px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+        .apply-btn:hover {
+            background: var(--accent);
+        }
+        .poster-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .poster-img {
+            width: 320px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 16px;
+        }
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+        .sponsor-logo {
+            width: 100px;
+            height: 60px;
+            object-fit: contain;
+            background: var(--bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 8px;
+            margin: auto;
+            display: block;
+        }
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 1rem;
+        }
+        .success-page {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background: var(--bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            margin: 48px auto;
+            max-width: 600px;
+            animation: fadeIn 1s;
+        }
+        .success-page h2 {
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        @media (max-width: 700px) {
+            section, .form-section, .success-page {
+                padding: 16px;
+                margin: 24px 8px;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-poster, .poster-img {
+                width: 90vw;
+                max-width: 320px;
+            }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <img src="photo.jpg" alt="Event Poster" class="hero-poster" />
+            <div class="hero-title">ANTI DRUG AWARENESS RUN</div>
+            <div class="hero-location">Visakhapatnam</div>
+            <div class="hero-tagline">
+                Run for Health.<br>
+                Run for Awareness.<br>
+                Run Against Drugs.
+            </div>
+            <div class="hero-desc">
+                Join hundreds of participants in spreading awareness about the harmful effects of drugs and promoting a healthier future.
+            </div>
+            <div class="hero-details">
+                <strong>5K Awareness Run</strong><br>
+                Date: <span id="event-date">29 March 2026</span><br>
+                Location: RK Beach Road Visakhapatnam 
+            </div>
+            <div class="countdown" id="countdown"></div>
+            <div class="live-counter">Live Registrations: <span id="live-counter">0</span></div>
+            <button class="register-btn" onclick="scrollToRegistration()">Register Now</button>
+        </div>
+    </header>
+
+    <section>
+        <h2>About the Event</h2>
+        <p>
+            The Anti Drug Awareness Run is a community initiative aimed at educating society about the dangers of drug abuse and promoting a healthy and disciplined lifestyle.<br><br>
+            This run brings together students, professionals, athletes, and citizens of Visakhapatnam to unite for a common cause.<br><br>
+            Together we can build a drug-free and healthier future.
+        </p>
+    </section>
+
+    <section>
+        <h2>Event Details</h2>
+        <div class="event-details-list">
+            <div>Event Category<br><strong>5K Awareness Run</strong></div>
+            <div>Location<br><strong> RK Beach Road Visakhapatnam</strong></div>
+            <div>Participants<br>
+                Students<br>
+                Professionals<br>
+                Fitness Enthusiasts<br>
+                General Public
+            </div>
+        </div>
+    </section>
+
+    <section id="registration-section" class="form-section">
+        <h2>Register for the Run</h2>
+        <form id="registration-form" autocomplete="off">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required maxlength="60">
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required maxlength="60">
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10">
+
+            <label for="age">Age *</label>
+            <input type="number" id="age" name="age" required min="10" max="99">
+
+            <label for="gender">Gender *</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+
+            <label for="city">City *</label>
+            <input type="text" id="city" name="city" required maxlength="40">
+
+            <label for="emergency">Emergency Contact *</label>
+            <input type="tel" id="emergency" name="emergency" required pattern="[0-9]{10}" maxlength="10">
+
+            <label for="tshirt">T-Shirt Size *</label>
+            <select id="tshirt" name="tshirt" required>
+                <option value="">Select</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+
+            <label for="race">Race Category *</label>
+            <input type="text" id="race" name="race" value="5K Run" readonly>
+
+            <div class="donation-section">
+                <h3>Additional Charity Contribution (Optional)</h3>
+                <p>
+                    Would you like to make an additional contribution to support anti-drug awareness programs, youth campaigns, and community initiatives?
+                </p>
+                <div class="donation-options">
+                    <label><input type="radio" name="donation" value="0" checked> None</label>
+                    <label><input type="radio" name="donation" value="500"> ₹500</label>
+                    <label><input type="radio" name="donation" value="1000"> ₹1000</label>
+                    <label><input type="radio" name="donation" value="2000"> ₹2000</label>
+                    <label><input type="radio" name="donation" value="5000"> ₹5000</label>
+                    <label><input type="radio" name="donation" value="other"> Other</label>
+                </div>
+                <input type="number" id="donation-other" name="donation-other" min="100" placeholder="Enter custom amount" style="display:none;">
+            </div>
+
+            <div class="coupon-section">
+                <h3>Have a Coupon?</h3>
+                <input type="text" id="coupon" name="coupon" placeholder="Coupon Code">
+                <button type="button" class="apply-btn" onclick="applyCoupon()">Apply Coupon</button>
+                <div id="coupon-msg"></div>
+            </div>
+
+            <div>
+                <strong>Total Payment: ₹<span id="total-payment">350</span></strong>
+            </div>
+
+            <div>
+                <strong>Payment Details:</strong><br>
+                UPI ID: 8639060226@slc<br>
+                <img src="QRUPI.jpg .jpg" alt="UPI QR Code" width="200" height="200">
+            </div>
+
+            <button type="submit" class="register-btn">Submit Registration & Pay</button>
+        </form>
+    </section>
+
+    <section class="poster-section">
+        <img src="photo.jpg" alt="photo" class="poster-img" />
+        <div>
+            <strong>ANTI DRUG AWARENESS RUN</strong><br>
+            Date: <span id="poster-date">29 March 2026</span><br>
+            Location: RK Beach Road, Visakhapatnam<br>
+            Sponsors: <span id="poster-sponsors">ABC Corp, XYZ Foundation</span><br>
+            Tagline: Run for a Drug-Free Future
+        </div>
+    </section>
+
+    <section>
+        <h2>Sponsors</h2>
+        <div class="sponsors-grid">
+            <img src="Monster.jpg" alt="Sponsor 1" class="sponsor-logo">
+            <img src="Decathlon.jpg" alt="Sponsor 2" class="sponsor-logo">
+            <img src="Triumph.jpg" alt="Sponsor 3" class="sponsor-logo">
+            <img src="coco.jpg" alt="Sponsor 4" class="sponsor-logo">
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="contact-section">
+            <div>Email: <a href="mailto:dadabala@gitam.in">dadabala@gitam.in</a></div>
+            <div>Phone: <a href="tel:+91 626486943">+91 626486943</a></div>
+            <div>Instagram: <a href="https://www.instagram.com/anti_drug_awaraness_run?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@antidrugrunvizag</a></div>
+        </div>
+    </section>
+
+    <div class="success-page" id="success-page">
+        <h2>Registration Successful</h2>
+        <p>
+            Thank you for registering for the Anti Drug Awareness Run – Visakhapatnam.<br>
+            Registration ID: <span id="success-regid"></span><br>
+            Check your email for confirmation details.
+        </p>
+    </div>
+
+    <script>
+        // Countdown Timer
+        const eventDate = new Date('2026-08-15T06:00:00+05:30');
+        function updateCountdown() {
+            const now = new Date();
+            const diff = eventDate - now;
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = "Event Started!";
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            document.getElementById('countdown').textContent =
+                `Countdown: ${days} days ${hours} hrs ${mins} mins`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Live Registration Counter (simulate, replace with Supabase fetch)
+        let liveCount = parseInt(localStorage.getItem('liveCount')) || 0;
+        function updateLiveCounter() {
+            // TODO: Replace with Supabase real-time fetch
+            document.getElementById('live-counter').textContent = liveCount;
+        }
+        setInterval(updateLiveCounter, 2000);
+        updateLiveCounter();
+
+        // Scroll to Registration
+        function scrollToRegistration() {
+            document.getElementById('registration-section').scrollIntoView({behavior:'smooth'});
+        }
+
+        // Donation logic
+        const donationRadios = document.querySelectorAll('input[name="donation"]');
+        const donationOther = document.getElementById('donation-other');
+        let baseAmount = 350;
+        let donationAmount = 0;
+        donationRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'other') {
+                    donationOther.style.display = 'block';
+                    donationAmount = donationOther.value ? parseInt(donationOther.value) : 0;
+                } else {
+                    donationOther.style.display = 'none';
+                    donationAmount = parseInt(this.value);
+                }
+                updateTotalPayment();
+            });
+        });
+        donationOther.addEventListener('input', function() {
+            donationAmount = parseInt(this.value) || 0;
+            updateTotalPayment();
+        });
+
+        // Coupon logic
+        let couponDiscount = 0;
+        function applyCoupon() {
+            const code = document.getElementById('coupon').value.trim().toUpperCase();
+            let msg = '';
+            if (code === 'RUN100') {
+                couponDiscount = 100;
+                msg = 'Coupon applied: ₹100 discount!';
+            } else if (code === 'RUN200') {
+                couponDiscount = 200;
+                msg = 'Coupon applied: ₹200 discount!';
+            } else if (code === '') {
+                couponDiscount = 0;
+                msg = '';
+            } else {
+                couponDiscount = 0;
+                msg = 'Invalid coupon code.';
+            }
+            updateTotalPayment();
+            document.getElementById('coupon-msg').textContent = msg;
+        }
+
+        function updateTotalPayment() {
+            let total = baseAmount + donationAmount - couponDiscount;
+            if (total < 0) total = 0;
+            document.getElementById('total-payment').textContent = total;
+        }
+        updateTotalPayment();
+
+        // Registration Form Submission
+        document.getElementById('registration-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            // Validate
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const gender = document.getElementById('gender').value;
+            const city = document.getElementById('city').value.trim();
+            const emergency = document.getElementById('emergency').value.trim();
+            const tshirt = document.getElementById('tshirt').value;
+            const race = document.getElementById('race').value;
+            const coupon = document.getElementById('coupon').value.trim();
+            let donation = donationAmount;
+            let totalPayment = baseAmount + donationAmount - couponDiscount;
+            if (totalPayment < 0) totalPayment = 0;
+
+            // Generate unique Registration ID
+            const regId = 'ADR' + Date.now().toString(36).toUpperCase();
+
+            // Payment Integration (simulate)
+            // TODO: Replace with real payment gateway
+            const paymentStatus = 'Paid';
+
+            // Google Sheets Integration (simulate)
+            // TODO: Replace with real Google Sheets API/Supabase
+            try {
+                // Simulate storing data
+                liveCount++;
+                localStorage.setItem('liveCount', liveCount);
+                // Simulate confirmation email
+                sendConfirmationEmail(name, email, regId);
+
+                // Show success page
+                document.getElementById('success-regid').textContent = regId;
+                document.getElementById('success-page').style.display = 'flex';
+                document.getElementById('registration-section').style.display = 'none';
+                window.scrollTo({top:0,behavior:'smooth'});
+            } catch (err) {
+                alert('Registration failed. Please try again.');
+            }
+        });
+
+        // Confirmation Email Prompt (simulate)
+        function sendConfirmationEmail(name, email, regId) {
+            // TODO: Replace with real email sending logic
+            const emailContent = `Email sent to ${email}:
+Subject: Registration Confirmed – Anti Drug Awareness Run
+
+Dear ${name},
+
+Your registration for the ANTI DRUG AWARENESS RUN – Visakhapatnam has been successfully completed.
+
+Registration Details:
+Name: ${name}
+Event: 5K Awareness Run
+Registration ID: ${regId}
+
+Event Location: RK Beach Road, Visakhapatnam
+Event Date: 29 March 2026
+
+Thank you for supporting the cause and helping spread awareness against drug abuse.
+
+We look forward to seeing you on the run day.
+
+Regards,
+Event Organizing Team
+Anti Drug Awareness Run
+            `;
+            console.log(emailContent);
+            alert(`Confirmation Email Sent!\n\n${emailContent}`);
+        }
+    </script>
+</body>
+</html>
