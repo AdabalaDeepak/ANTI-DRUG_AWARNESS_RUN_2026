@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap">
     <style>
         :root {
-            --primary: #0a3d62;
-            --accent: #38ada9;
+            --primary: #5a5e1482;
+            --accent: #98934eb7;
             --bg: #f5f6fa;
             --white: #fff;
             --shadow: 0 4px 24px rgba(10,61,98,0.08);
@@ -283,7 +283,6 @@
                 Date: <span id="event-date">29 March 2026</span><br>
                 Location: RK Beach Road Visakhapatnam 
             </div>
-            <div class="countdown" id="countdown"></div>
             <div class="live-counter">Live Registrations: <span id="live-counter">0</span></div>
             <button class="register-btn" onclick="scrollToRegistration()">Register Now</button>
         </div>
@@ -303,11 +302,10 @@
         <div class="event-details-list">
             <div>Event Category<br><strong>5K Awareness Run</strong></div>
             <div>Location<br><strong> RK Beach Road Visakhapatnam</strong></div>
-            <div>Participants<br>
-                Students<br>
-                Professionals<br>
-                Fitness Enthusiasts<br>
-                General Public
+            <div>🏃 Students<br>
+                 🏃 Professionals<br>
+                 🏃 Fitness Enthusiasts<br>
+                 🏃 General Public
             </div>
         </div>
     </section>
@@ -344,11 +342,13 @@
             <label for="tshirt">T-Shirt Size *</label>
             <select id="tshirt" name="tshirt" required>
                 <option value="">Select</option>
+                <option>XS</option>
                 <option>S</option>
                 <option>M</option>
                 <option>L</option>
                 <option>XL</option>
                 <option>XXL</option>
+                <option>XXXL</option>
             </select>
 
             <label for="race">Race Category *</label>
@@ -378,7 +378,7 @@
             </div>
 
             <div>
-                <strong>Total Payment: ₹<span id="total-payment">350</span></strong>
+                <strong>Total Payment: ₹<span id="total-payment">310</span></strong>
             </div>
 
             <div>
@@ -397,8 +397,6 @@
             <strong>ANTI DRUG AWARENESS RUN</strong><br>
             Date: <span id="poster-date">29 March 2026</span><br>
             Location: RK Beach Road, Visakhapatnam<br>
-            Sponsors: <span id="poster-sponsors">ABC Corp, XYZ Foundation</span><br>
-            Tagline: Run for a Drug-Free Future
         </div>
     </section>
 
@@ -415,8 +413,8 @@
     <section>
         <h2>Contact</h2>
         <div class="contact-section">
-            <div>Email: <a href="mailto:dadabala@gitam.in">dadabala@gitam.in</a></div>
-            <div>Phone: <a href="tel:+91 626486943">+91 626486943</a></div>
+            <div>Email: <a href="mailto:antidrugawarenessrunmarathon@gmail.com">antidrugawarenessrunmarathon@gmail.com</a></div>
+            <div>Phone: <a href="tel:+91 7093641098 ">+91 7093641098</a></div>
             <div>Instagram: <a href="https://www.instagram.com/anti_drug_awaraness_run?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@antidrugrunvizag</a></div>
         </div>
     </section>
@@ -490,12 +488,9 @@
         function applyCoupon() {
             const code = document.getElementById('coupon').value.trim().toUpperCase();
             let msg = '';
-            if (code === 'RUN100') {
+            if (code === 'DEFENCE100') {
                 couponDiscount = 100;
                 msg = 'Coupon applied: ₹100 discount!';
-            } else if (code === 'RUN200') {
-                couponDiscount = 200;
-                msg = 'Coupon applied: ₹200 discount!';
             } else if (code === '') {
                 couponDiscount = 0;
                 msg = '';
